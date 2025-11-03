@@ -1,0 +1,18 @@
+/* Hide the entire "Field Summary" table in each class */
+div.summary-table[data-summary="Field Summary"],
+div.member-summary[data-summary="Field Summary"] {
+    display: none !important;
+}
+
+/* Hide the "Field Detail" sections at the bottom */
+div.details[data-details="Field Detail"],
+li.blockList:has(a[name="field.detail"]),
+section.details:has(h3#field-detail) {
+    display: none !important;
+}
+
+/* (Optional) Hide the 'Fields' section heading if any remains */
+h2:has(a[href="#field.summary"]),
+h3#field-detail {
+    display: none !important;
+}
