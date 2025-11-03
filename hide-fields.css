@@ -1,18 +1,19 @@
-/* Hide the entire "Field Summary" table in each class */
-div.summary-table[data-summary="Field Summary"],
-div.member-summary[data-summary="Field Summary"] {
-    display: none !important;
+li.blockList:has(> a#field\.summary),
+li.blockList:has(> a#field\.detail) {
+  display: none !important;
 }
 
-/* Hide the "Field Detail" sections at the bottom */
-div.details[data-details="Field Detail"],
-li.blockList:has(a[name="field.detail"]),
-section.details:has(h3#field-detail) {
-    display: none !important;
+a#field\.summary,
+a#field\.detail { display: none !important; }
+
+a#field\.summary ~ h3,
+a#field\.detail  ~ h3,
+a#field\.summary ~ table.memberSummary,
+a#field\.detail  ~ table.memberSummary,
+a#field\.summary ~ ul.blockList,
+a#field\.detail  ~ ul.blockList {
+  display: none !important;
 }
 
-/* (Optional) Hide the 'Fields' section heading if any remains */
-h2:has(a[href="#field.summary"]),
-h3#field-detail {
-    display: none !important;
-}
+a[href="#field.summary"],
+a[href="#field.detail"] { display: none !important; }
